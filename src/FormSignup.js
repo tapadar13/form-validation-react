@@ -1,4 +1,8 @@
+import useForm from "./useForm";
+
 const FormSignup = () => {
+  const { handleChange, formValues } = useForm();
+
   return (
     <div className="form-content-right">
       <form className="form">
@@ -16,6 +20,8 @@ const FormSignup = () => {
             id="username"
             className="form-input"
             placeholder="Enter your username"
+            value={formValues.username}
+            onChange={handleChange}
           />
         </div>
         <div className="form-inputs">
@@ -28,6 +34,8 @@ const FormSignup = () => {
             id="email"
             className="form-input"
             placeholder="Enter your email"
+            value={formValues.email}
+            onChange={handleChange}
           />
         </div>
         <div className="form-inputs">
@@ -40,6 +48,8 @@ const FormSignup = () => {
             id="password"
             className="form-input"
             placeholder="Enter your password"
+            value={formValues.password}
+            onChange={handleChange}
           />
         </div>
         <div className="form-inputs">
@@ -52,6 +62,8 @@ const FormSignup = () => {
             id="password2"
             className="form-input"
             placeholder="Enter your password"
+            value={formValues.password2}
+            onChange={handleChange}
           />
         </div>
         <button type="submit" className="form-input-btn">
