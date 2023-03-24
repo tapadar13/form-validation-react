@@ -1,11 +1,11 @@
 import useForm from "./useForm";
 
 const FormSignup = () => {
-  const { handleChange, formValues } = useForm();
+  const { formValues, handleChange, handleSubmit } = useForm();
 
   return (
     <div className="form-content-right">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h1>
           Get started with us today! Create your account by filling out the
           information below.
