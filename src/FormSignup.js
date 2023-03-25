@@ -1,7 +1,10 @@
 import useForm from "./useForm";
+import ValidateInfo from "./ValidateInfo";
+import "./styles/form.css";
 
 const FormSignup = () => {
-  const { formValues, handleChange, handleSubmit } = useForm();
+  const { formValues, handleChange, handleSubmit, errors } =
+    useForm(ValidateInfo);
 
   return (
     <div className="form-content-right">
@@ -23,6 +26,7 @@ const FormSignup = () => {
             value={formValues.username}
             onChange={handleChange}
           />
+          {errors.username && <p>{errors.username}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="email" className="form-label">
@@ -37,6 +41,7 @@ const FormSignup = () => {
             value={formValues.email}
             onChange={handleChange}
           />
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password" className="form-label">
@@ -51,6 +56,7 @@ const FormSignup = () => {
             value={formValues.password}
             onChange={handleChange}
           />
+          {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password2" className="form-label">
@@ -65,6 +71,7 @@ const FormSignup = () => {
             value={formValues.password2}
             onChange={handleChange}
           />
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
         <button type="submit" className="form-input-btn">
           Sign up
