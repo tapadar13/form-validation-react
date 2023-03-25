@@ -7,10 +7,8 @@ const ValidateInfo = (values) => {
 
   if (!values.email) {
     errors.email = "Email is required";
-  } else if (
-    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)
-  ) {
-    errors.email = "Email is not valid";
+  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    errors.email = "Email is invalid";
   }
 
   if (!values.password) {
